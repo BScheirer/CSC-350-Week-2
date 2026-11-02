@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A curated list of favorite singers, populated from JSON using JavaScript and styled with Bootstrap 5.">
+  <title>On Repeat | Favorite Singers</title>
+
+  <!--
+    Student: Brandon Scheirer
+    Date: November 2, 2026
+    Assignment: Week 2 - JSON and Bootstrap
+    Bootstrap 5.3.6 is included locally so this website works without internet access.
+  -->
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="JS/main.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header container-xxl d-flex align-items-center justify-content-between gap-3 py-4">
+      <a class="brand d-inline-flex align-items-center gap-2" href="index.html" aria-label="On Repeat home">
+        <span class="brand-icon" aria-hidden="true">♫</span>
+        <span>ON REPEAT<span class="brand-period">.</span></span>
+      </a>
+      <span class="course-label d-none d-sm-inline-block">INNOVATIVE WEB DEVELOPMENT <span class="small-divider">/</span> WEEK 02</span>
+      <span class="course-label d-sm-none">WEEK 02</span>
+    </header>
+
+    <main class="container-xxl main-content" id="main-content">
+      <section class="page-intro" aria-labelledby="page-title">
+        <div class="eyebrow d-flex align-items-center gap-3 mb-3"><span class="eyebrow-line" aria-hidden="true"></span> A LITTLE MUSIC COLLECTION <span class="eyebrow-star" aria-hidden="true">✳</span></div>
+        <h1 id="page-title">Good music.<br><em>Great artists.</em></h1>
+        <div class="intro-bottom d-flex flex-wrap align-items-end justify-content-between gap-3">
+          <p class="intro-copy mb-0">An ever-replayable list of favorite voices and unforgettable tracks. Built with Bootstrap 5, a JSON object, and JavaScript.</p>
+          <div class="edition-mark" aria-label="Volume 1, curated collection">VOL. <strong>01</strong> <span aria-hidden="true">↗</span></div>
+        </div>
+      </section>
+
+      <!-- Exact Bootstrap grid sizes requested by the assignment: col-sm-4 and col-sm-8. -->
+      <section class="row g-4 g-lg-5 content-grid" aria-label="Favorite singers and songs">
+        <div class="col-sm-4">
+          <figure class="artwork-panel mb-0">
+            <img class="img-fluid artwork-image" src="images/music-artwork.svg" width="780" height="980" alt="Illustration of a gold vintage microphone in front of a vinyl record on a dark orange background">
+            <figcaption class="artwork-caption d-flex justify-content-between align-items-center">
+              <span>THE LISTENING ROOM</span><span>EST. 2026</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-sm-8">
+          <section class="library-panel h-100" aria-labelledby="library-title">
+            <div class="panel-heading d-flex flex-wrap align-items-start justify-content-between gap-3">
+              <div>
+                <div class="panel-kicker mb-2">THE COLLECTION</div>
+                <h2 id="library-title">Artists on rotation<span class="heading-dot">.</span></h2>
+                <p class="panel-subtitle mb-0">Six voices. Plenty of songs worth replaying.</p>
+              </div>
+              <span class="badge rounded-pill artist-count" id="artistCount" aria-live="polite">06 ARTISTS</span>
+            </div>
+
+            <div class="search-area d-flex align-items-center gap-3">
+              <svg class="search-icon" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <label for="artistSearch" class="visually-hidden">Search artists, songs, genres, or hometowns</label>
+              <input type="search" class="form-control search-input" id="artistSearch" placeholder="Search artists, songs, genres..." autocomplete="off">
+              <span class="search-shortcut d-none d-md-block">FILTER</span>
+            </div>
+
+            <div class="table-responsive music-table-wrap">
+              <table class="table table-hover align-middle music-table mb-0">
+                <caption class="visually-hidden">Singers, music genres, notable tracks, and hometowns. Table rows are created by JavaScript from JSON data.</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ARTIST</th>
+                    <th scope="col">GENRE</th>
+                    <th scope="col">FAVORITE TRACKS</th>
+                    <th scope="col">HOMETOWN</th>
+                  </tr>
+                </thead>
+                <tbody id="artistRows">
+                  <!-- Rows are populated dynamically from the JSON data in JS/main.js. -->
+                </tbody>
+              </table>
+            </div>
+
+            <div class="panel-footer d-flex flex-wrap justify-content-between gap-2 align-items-center">
+              <span id="resultStatus" role="status" aria-live="polite">Loading artists...</span>
+              <span class="footer-stamp">MADE TO BE REPLAYED <span aria-hidden="true">✳</span></span>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <div class="bottom-note d-flex flex-wrap align-items-center justify-content-between gap-2">
+        <span>CURATED WITH CARE <span class="bottom-star" aria-hidden="true">✳</span> LISTEN LOUD</span>
+        <span>BRANDON SCHEIRER <span class="small-divider">/</span> WEEK 2 ASSIGNMENT</span>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

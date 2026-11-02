@@ -1,0 +1,79 @@
+/*
+ * Student: Brandon Scheirer
+ * Date: November 2, 2026
+ * Assignment: Week 2 - JSON and Bootstrap
+ * Purpose: Custom visual styling layered on top of Bootstrap 5.
+ */
+
+:root {
+  --bg: #111310;
+  --surface: #1b1d19;
+  --surface-raised: #22251f;
+  --line: #3b3e36;
+  --cream: #f6f1e6;
+  --muted: #a4a79c;
+  --accent: #e9b86d;
+  --accent-bright: #ffd38f;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--cream); background: var(--bg); font-family: Arial, Helvetica, sans-serif; }
+.page-shell { min-height: 100vh; background: radial-gradient(ellipse 70% 65% at 91% 15%, rgba(104,76,48,.10),transparent 75%),var(--bg); }
+.site-header { border-bottom: 1px solid rgba(246,241,230,.10); }
+.brand { color: var(--cream); font-size: 1rem; font-weight: 850; letter-spacing: .15em; text-decoration: none; }
+.brand:hover { color: var(--cream); }
+.brand-icon { display: inline-grid; place-items: center; width: 35px; height: 35px; border: 1px solid var(--accent); border-radius: 50%; color: var(--accent); font-size: 1.3rem; }
+.brand-period,.heading-dot { color: var(--accent); }
+.course-label { font-size: .68rem; letter-spacing: .14em; color: var(--muted); font-weight: 700; }
+.small-divider { color: #777e6f; padding: 0 .5rem; }
+.main-content { padding-top: clamp(45px, 7vw, 90px); padding-bottom: 35px; }
+.page-intro { margin-bottom: clamp(43px, 6vw, 76px); }
+.eyebrow { color: var(--accent); font-size: .73rem; letter-spacing: .2em; font-weight: 800; }
+.eyebrow-line { display: inline-block; background: var(--accent); width: 31px; height: 1px; }
+.eyebrow-star { font-size: 1rem; }
+h1 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: clamp(3.9rem, 8vw, 7.9rem); letter-spacing: -.075em; line-height: .96; margin-bottom: 25px; }
+h1 em { color: var(--accent); font-weight: 400; }
+.intro-copy { color: #b9bcb0; font-size: clamp(.91rem, 1.25vw, 1.04rem); line-height: 1.8; max-width: 570px; }
+.edition-mark { color: #9b9c90; font-size: .68rem; font-weight: 700; letter-spacing: .15em; white-space: nowrap; }
+.edition-mark strong { color: var(--accent); font-size: 1.65rem; font-family: Georgia,serif; font-weight: 400; margin-left: 5px; }
+.edition-mark span { color: var(--accent); margin-left: 8px; font-size: 1.3rem; }
+.content-grid { align-items: stretch; }
+.artwork-panel { height: 100%; overflow: hidden; position: relative; min-height: 350px; background: #9b5737; border-radius: 7px; border: 1px solid #bb7750; }
+.artwork-image { width: 100%; height: 100%; min-height: 350px; object-fit: cover; display: block; }
+.artwork-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 17px 20px; color: #fff1d6; background: linear-gradient(0deg,rgba(35,23,18,.75),rgba(35,23,18,.03)); font-size: .65rem; font-weight: 750; letter-spacing: .15em; }
+.library-panel { border: 1px solid var(--line); background: var(--surface); border-radius: 7px; display: flex; flex-direction: column; overflow: hidden; }
+.panel-heading { padding: clamp(24px, 3vw, 35px) clamp(22px, 3vw, 35px) 25px; }
+.panel-kicker { color: var(--accent); font-size: .69rem; letter-spacing: .20em; font-weight: 850; }
+h2 { margin: 0 0 9px; font-family: Georgia,'Times New Roman',serif; font-size: clamp(1.85rem, 2.7vw, 2.45rem); letter-spacing: -.035em; font-weight: 400; }
+.panel-subtitle { color: var(--muted); font-size: .84rem; line-height: 1.6; }
+.artist-count { align-self: start; padding: 10px 13px; font-size: .64rem; letter-spacing: .1em; background: rgba(233,184,109,.11); color: var(--accent-bright); border: 1px solid rgba(233,184,109,.35); }
+.search-area { margin: 0 clamp(22px,3vw,35px) 23px; background: #292c26; color: #a3a69a; border: 1px solid #45483f; border-radius: 4px; padding: 0 14px; transition: border-color .2s; }
+.search-area:focus-within { border-color: var(--accent); }
+.search-icon { flex: none; }
+.form-control.search-input { border: 0; outline: none; box-shadow: none; padding: 13px 0; border-radius: 0; font-size: .85rem; color: var(--cream); background: transparent; min-width: 0; }
+.form-control.search-input:focus { box-shadow: none; background: transparent; color: var(--cream); }
+.form-control.search-input::placeholder { color: #a4a79b; opacity: 1; }
+.search-input::-webkit-search-cancel-button { cursor: pointer; }
+.search-shortcut { font-size: .6rem; color: #91948a; border: 1px solid #555a4f; padding: 4px 6px; border-radius: 3px; letter-spacing: .1em; }
+.music-table-wrap { flex: 1; }
+.music-table { --bs-table-color: var(--cream); --bs-table-bg: transparent; --bs-table-border-color: var(--line); --bs-table-hover-bg: #292c25; --bs-table-hover-color: var(--cream); color: var(--cream); min-width: 660px; }
+.music-table th { color: #b5b9ae; font-size: .63rem; letter-spacing: .13em; font-weight: 700; border-bottom-width: 1px; padding: 15px 13px 17px; white-space: nowrap; }
+.music-table td { padding: 19px 13px; color: var(--cream); font-size: .78rem; vertical-align: middle; line-height: 1.65; border-color: #393c34; }
+.music-table th:first-child,.music-table td:first-child { padding-left: clamp(22px,3vw,35px); }
+.music-table th:last-child,.music-table td:last-child { padding-right: clamp(22px,3vw,35px); }
+.music-table tbody tr:last-child td { border-bottom: 0; }
+.music-table .number-cell { color: #8c9184; font-family: Georgia,serif; font-size: .95rem; }
+.music-table .artist-name { font-size: .85rem; font-weight: 700; white-space: nowrap; }
+.genre-pill { display: inline-block; padding: 5px 8px; border-radius: 3px; background: #34382f; color: #c4cdb5; font-size: .68rem; white-space: nowrap; }
+.music-table .songs-cell { max-width: 230px; color: #d4d5cc; }
+.song-divider { color: var(--accent); }
+.music-table .hometown-cell { color: #abb0a3; white-space: nowrap; }
+.music-table .empty-results { padding: 55px 15px; color: #d4d5cc; }
+.panel-footer { padding: 22px clamp(22px,3vw,35px); border-top: 1px solid var(--line); color: #aeb1a6; font-size: .71rem; }
+.footer-stamp { color: var(--accent); font-size: .61rem; font-weight: 800; letter-spacing: .12em; white-space: nowrap; }
+.footer-stamp span { font-size: .84rem; padding-left: 3px; }
+.bottom-note { border-top: 1px solid rgba(246,241,230,.1); margin-top: 76px; padding-top: 22px; color: #8b8e82; font-size: .64rem; font-weight: 700; letter-spacing: .14em; }
+.bottom-star { color: var(--accent); padding: 0 8px; }
+@media (max-width: 1000px) { .music-table th,.music-table td { padding-left: 10px; padding-right: 10px; } }
+@media (max-width: 767px) { .page-intro { margin-bottom: 40px; } .panel-heading { padding-bottom: 20px; } .artwork-panel { min-height: 300px; } .bottom-note { margin-top: 45px; } }
+@media (max-width: 575.98px) { .main-content { padding-top: 49px; } h1 { font-size: clamp(3.6rem, 15vw, 5.5rem); } .artwork-panel { min-height: 340px; max-height: 520px; } .artwork-image { min-height: 340px; } .course-label { font-size: .58rem; } }
